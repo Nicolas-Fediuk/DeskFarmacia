@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "E+nVDJfzB2R/93SckDWvzfbIWHBhGk1ekPbUq1VhM+xbwK3q50wnEv/RcrV+sd/eW1+U6LxAzX37TRvDdwbAiA==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\nfediuk\\Desktop\\PROYECTO_DESK_FARMACIA\\DeskFarmacia\\DeskFarmacia\\Vista.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nfediuk\\.nuget\\packages\\krypton.navigator\\70.22.11.312\\krypton.navigator.70.22.11.312.nupkg.sha512",
+    "C:\\Users\\nfediuk\\.nuget\\packages\\krypton.ribbon\\70.22.11.312\\krypton.ribbon.70.22.11.312.nupkg.sha512",
+    "C:\\Users\\nfediuk\\.nuget\\packages\\krypton.toolkit\\70.22.11.312\\krypton.toolkit.70.22.11.312.nupkg.sha512",
+    "C:\\Users\\nfediuk\\.nuget\\packages\\krypton.workspace\\70.22.11.312\\krypton.workspace.70.22.11.312.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "El proyecto Entidades no es compatible con net6.0-windows7.0 (.NETCoreApp,Version=v6.0). El proyecto Entidades admite: uap10.0.17763 (UAP,Version=v10.0.17763)",
+      "libraryId": "Entidades",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "El proyecto Negocio no es compatible con net6.0-windows7.0 (.NETCoreApp,Version=v6.0). El proyecto Negocio admite: uap10.0.17763 (UAP,Version=v10.0.17763)",
+      "libraryId": "Negocio",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    }
+  ]
+}

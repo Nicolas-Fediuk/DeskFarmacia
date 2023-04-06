@@ -1,0 +1,61 @@
+create database Farmacia;
+use Farmacia;
+
+create table LABORATORIOS(
+CODIGO_LAB INT IDENTITY(1,1) PRIMARY KEY,
+NOMBRE_LAB varchar(15) not null,
+TEL_LAB int null,
+DIRECCION_LAB varchar(20) null
+);
+
+create table TIPO_MEDICAMENTOS(
+CODIGO_TM INT IDENTITY(1,1) PRIMARY KEY,
+DESCRIP_TM VARCHAR(255) null
+);
+
+create table MEDICAMENTOS(
+COD_MED INT IDENTITY(1,1) PRIMARY KEY,
+NOMBRE_MED varchar(30) null,
+TIPO_MED INT not null,
+STOCK_MED int not null,
+CODLAB_MED INT NOT null ,
+PRECIO_MED decimal(6,2) not null,
+RECETA_MED bit not null,
+
+foreign key (TIPO_MED) references TIPO_MEDICAMENTOS(CODIGO_TM),
+foreign key (CODLAB_MED) references LABORATORIOS(CODIGO_LAB)
+);
+
+create table FAMILIAS(
+CODIGO_FAMILIA INT IDENTITY(1,1) primary key,
+DESCRIP_FAMILIA varchar(30) not null
+);
+
+create table MEDXFAMILIA(
+CODMEDICAMENTO_MEDXFAMILIA INT,
+CODFAMILIA_MEDXFAMILIA INT,
+
+primary key(CODMEDICAMENTO_MEDXFAMILIA,CODFAMILIA_MEDXFAMILIA),
+foreign key(CODMEDICAMENTO_MEDXFAMILIA) references MEDICAMENTOS(COD_MED),
+foreign key (CODFAMILIA_MEDXFAMILIA) references FAMILIAS(CODIGO_FAMILIA)
+);
+
+create table VENTAS(
+NUMFACTURA_VENTAS INT IDENTITY(1,1) primary key,
+FECALT_VENTAS datetime default GETDATE(),
+TOTAL_VENTAS decimal(6,2) default 0
+);
+
+create table DETVENTAS(
+NUMFACTURA_DETVENTAS INT,
+CODMED_DETVENTAS INT,
+PRECIO_DETVENTAS decimal(6,2) not null,
+CANTIDVEND_DETVENTAS smallint not null,
+
+primary key (NUMFACTURA_DETVENTAS,CODMED_DETVENTAS),
+foreign key (NUMFACTURA_DETVENTAS) references VENTAS(NUMFACTURA_VENTAS),
+foreign key (CODMED_DETVENTAS) references MEDICAMENTOS(COD_MED)
+);
+
+
+
