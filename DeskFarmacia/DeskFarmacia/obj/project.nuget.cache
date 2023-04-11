@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "E+nVDJfzB2R/93SckDWvzfbIWHBhGk1ekPbUq1VhM+xbwK3q50wnEv/RcrV+sd/eW1+U6LxAzX37TRvDdwbAiA==",
+  "dgSpecHash": "QvpvLfZHd3avzPRttDTGI0lQmRM378aj1Yv1gSMofLwz3j5qRMIoLUZSxJ1RcZt2+yMJIs0osxIqrwamnLiEKA==",
   "success": false,
   "projectFilePath": "C:\\Users\\nfediuk\\Desktop\\PROYECTO_DESK_FARMACIA\\DeskFarmacia\\DeskFarmacia\\Vista.csproj",
   "expectedPackageFiles": [
@@ -22,7 +22,7 @@
     {
       "code": "NU1201",
       "level": "Error",
-      "message": "El proyecto Negocio no es compatible con net6.0-windows7.0 (.NETCoreApp,Version=v6.0). El proyecto Negocio admite: uap10.0.17763 (UAP,Version=v10.0.17763)",
+      "message": "El proyecto Negocio no es compatible con net6.0-windows7.0 (.NETCoreApp,Version=v6.0). El proyecto Negocio admite: uap10.0.10240 (UAP,Version=v10.0.10240)",
       "libraryId": "Negocio",
       "targetGraphs": [
         "net6.0-windows7.0"
