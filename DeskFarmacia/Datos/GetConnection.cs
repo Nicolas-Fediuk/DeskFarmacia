@@ -13,16 +13,13 @@ namespace Datos
     {
         public string getConnection()
         {
-            string a = ConfigurationManager.AppSettings["ENTORNO"];
 
-
-            if (ConfigurationManager.AppSettings.Get("ENTORNO") == "PRO")
+           if (ConfigurationManager.AppSettings.Get("ENTORNO") == "PRO")
            {
                 return ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
            }
            else
            {
-                
                 return null;
            }
 

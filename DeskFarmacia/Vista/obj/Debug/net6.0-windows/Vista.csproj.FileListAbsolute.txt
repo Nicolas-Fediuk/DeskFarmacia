@@ -45,3 +45,4 @@ C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\Vista\bin\Debug\net
 C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\Vista\obj\Debug\net6.0-windows\Vista.frmMain.resources
 C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\Vista\obj\Debug\net6.0-windows\Vista.MessengerBox.FormMessageBox.resources
 C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\Vista\obj\Debug\net6.0-windows\Vista.Properties.Resources.resources
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\Vista\obj\Debug\net6.0-windows\Vista.View.frmControlStock.resources
