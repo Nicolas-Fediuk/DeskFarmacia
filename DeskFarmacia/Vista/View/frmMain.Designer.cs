@@ -37,7 +37,7 @@ namespace Vista
             this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonButton3 = new Krypton.Toolkit.KryptonButton();
-            this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
+            this.btnPedido = new Krypton.Toolkit.KryptonButton();
             this.btnStok = new Krypton.Toolkit.KryptonButton();
             this.lblMenu = new Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
@@ -50,7 +50,7 @@ namespace Vista
             this.kryptonPanel1.Controls.Add(this.kryptonLabel2);
             this.kryptonPanel1.Controls.Add(this.pictureBox1);
             this.kryptonPanel1.Controls.Add(this.kryptonButton3);
-            this.kryptonPanel1.Controls.Add(this.kryptonButton2);
+            this.kryptonPanel1.Controls.Add(this.btnPedido);
             this.kryptonPanel1.Controls.Add(this.btnStok);
             this.kryptonPanel1.Controls.Add(this.lblMenu);
             this.kryptonPanel1.Location = new System.Drawing.Point(31, 28);
@@ -91,14 +91,15 @@ namespace Vista
             this.kryptonButton3.TabIndex = 3;
             this.kryptonButton3.Values.Text = "kryptonButton3";
             // 
-            // kryptonButton2
+            // btnPedido
             // 
-            this.kryptonButton2.CornerRoundingRadius = -1F;
-            this.kryptonButton2.Location = new System.Drawing.Point(346, 172);
-            this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(112, 31);
-            this.kryptonButton2.TabIndex = 2;
-            this.kryptonButton2.Values.Text = "kryptonButton2";
+            this.btnPedido.CornerRoundingRadius = -1F;
+            this.btnPedido.Location = new System.Drawing.Point(346, 172);
+            this.btnPedido.Name = "btnPedido";
+            this.btnPedido.Size = new System.Drawing.Size(112, 31);
+            this.btnPedido.TabIndex = 2;
+            this.btnPedido.Values.Text = "Pedido";
+            this.btnPedido.Click += new System.EventHandler(this.btnPedido_Click);
             // 
             // btnStok
             // 
@@ -163,7 +164,7 @@ namespace Vista
         private Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private PictureBox pictureBox1;
         private Krypton.Toolkit.KryptonButton kryptonButton3;
-        private Krypton.Toolkit.KryptonButton kryptonButton2;
+        private Krypton.Toolkit.KryptonButton btnPedido;
         private Krypton.Toolkit.KryptonButton btnStok;
         private Krypton.Toolkit.KryptonLabel lblMenu;
         private Krypton.Toolkit.KryptonLabel kryptonLabel2;

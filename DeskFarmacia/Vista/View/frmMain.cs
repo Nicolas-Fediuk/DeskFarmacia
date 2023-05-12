@@ -22,6 +22,7 @@ namespace Vista
         {
             InitializeComponent();
             _btn.btn(btnStok);
+            _btn.btn(btnPedido);
             _lbl.LblTitle(lblMenu);
         }
 
@@ -45,6 +46,12 @@ namespace Vista
         private void lblMenu_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPedido_Click(object sender, EventArgs e)
+        {
+            frmPedido _pedido = new frmPedido();
+            _pedido.Show(); 
         }
     }
 }

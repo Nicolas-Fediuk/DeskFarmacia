@@ -1,3 +1,5 @@
+using Vista.View;
+
 namespace Vista
 {
     internal static class Program

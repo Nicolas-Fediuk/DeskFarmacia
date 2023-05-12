@@ -2,7 +2,7 @@
 
 namespace Vista.MessengerBox
 {
-    partial class FormMessageBox
+    partial class FormMessagerBox
     {
         /// <summary>
         /// Required designer variable.
@@ -188,7 +188,7 @@ namespace Vista.MessengerBox
             this.labelCaption.TabIndex = 4;
             this.labelCaption.Text = "labelCaption";
             // 
-            // FormMessageBox
+            // FormMessagerBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -199,7 +199,7 @@ namespace Vista.MessengerBox
             this.Controls.Add(this.panelTitleBar);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MinimumSize = new System.Drawing.Size(461, 206);
-            this.Name = "FormMessageBox";
+            this.Name = "FormMessagerBox";
             this.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";

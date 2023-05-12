@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Vista.MessengerBox
 {
-    public partial class FormMessageBox : Form
+    public partial class FormMessagerBox : Form
     {
         //Fields
         private Color primaryColor = Color.CornflowerBlue;
@@ -29,7 +29,7 @@ namespace Vista.MessengerBox
             }
         }
 
-        public FormMessageBox(string text, string caption, MessageBoxButtons buttons)
+        public FormMessagerBox(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon)
         {
             InitializeComponent();
             InitializeItems();
@@ -38,6 +38,7 @@ namespace Vista.MessengerBox
             this.labelCaption.Text = caption;
             SetFormSize();
             SetButtons(buttons, MessageBoxDefaultButton.Button1);//Set [Default Button 1]
+            SetIcon(icon);
         }
 
         private void InitializeItems()
@@ -70,6 +71,34 @@ namespace Vista.MessengerBox
                     button1.Location = new Point(xCenter, yCenter);
                     button1.Text = "Ok";
                     button1.DialogResult = DialogResult.OK;//Set DialogResult
+                    break;
+            }
+        }
+
+        private void SetIcon(MessageBoxIcon icon)
+        {
+            switch (icon)
+            {
+                case MessageBoxIcon.Error: //Error
+                    this.pictureBoxIcon.Image = Properties.Resources.error;
+                    PrimaryColor = Color.FromArgb(106, 90, 205);
+                    this.btnClose.FlatAppearance.MouseOverBackColor = Color.Crimson;
+                    break;
+                case MessageBoxIcon.Information: //Information
+                    this.pictureBoxIcon.Image = Properties.Resources.information;
+                    PrimaryColor = Color.FromArgb(106, 90, 205); //38, 191, 166
+                    break;
+                case MessageBoxIcon.Question://Question
+                    this.pictureBoxIcon.Image = Properties.Resources.question;
+                    PrimaryColor = Color.FromArgb(10, 119, 232);
+                    break;
+                case MessageBoxIcon.Exclamation://Exclamation
+                    this.pictureBoxIcon.Image = Properties.Resources.exclamation;
+                    PrimaryColor = Color.FromArgb(255, 140, 0);
+                    break;
+                case MessageBoxIcon.None: //None
+                    this.pictureBoxIcon.Image = Properties.Resources.chat;
+                    PrimaryColor = Color.CornflowerBlue;
                     break;
             }
         }

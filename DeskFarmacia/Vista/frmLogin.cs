@@ -48,7 +48,8 @@ namespace Vista
             else{
                 var result = RJMessengerBox.Show("Nombre o Contraseña erronea",
                   "Error",
-                  MessageBoxButtons.OK);
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Error);
             }
         }
 
