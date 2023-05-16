@@ -28,7 +28,7 @@ namespace Vista.ConfigControl
             _btn.OverrideDefault.Content.Padding = new System.Windows.Forms.Padding(-1, 5, -1, 5);
             _btn.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.White;
             _btn.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.White;
-            _btn.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            _btn.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             _btn.OverrideFocus.Back.Color1 = System.Drawing.Color.White;
             _btn.OverrideFocus.Back.Color2 = System.Drawing.Color.White;
             _btn.OverrideFocus.Border.Color1 = System.Drawing.Color.SlateBlue;
@@ -40,7 +40,7 @@ namespace Vista.ConfigControl
             _btn.OverrideFocus.Content.ShortText.Color1 = System.Drawing.Color.SlateBlue;
             _btn.OverrideFocus.Content.ShortText.Color2 = System.Drawing.Color.SlateBlue;
             _btn.OverrideFocus.Content.ShortText.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            _btn.Size = new System.Drawing.Size(112, 40);
+            _btn.Size = new System.Drawing.Size(120, 40);
             _btn.StateCommon.Back.Color1 = System.Drawing.Color.SlateBlue;
             _btn.StateCommon.Back.Color2 = System.Drawing.Color.SlateBlue;
             _btn.StateCommon.Border.Color1 = System.Drawing.Color.White;

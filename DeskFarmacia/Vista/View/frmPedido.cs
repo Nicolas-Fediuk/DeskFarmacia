@@ -11,6 +11,7 @@ using Entidades;
 using Krypton.Toolkit;
 using Negocio;
 using Vista.ConfigControl;
+using Vista.MessengerBox;
 
 namespace Vista.View
 {
@@ -18,6 +19,7 @@ namespace Vista.View
     {
         NegoPedido _stock = new NegoPedido();
         LabelConfig _lbl = new LabelConfig();
+        BtnConfig _btn = new BtnConfig();
 
         private KryptonDataGridViewTextBoxColumn colIdMedicamento;
         private KryptonDataGridViewTextBoxColumn colNombreMed;
@@ -27,6 +29,9 @@ namespace Vista.View
         public frmPedido()
         {
             InitializeComponent();
+            _lbl.LblTitle(lblNuevoPedido);
+            _lbl.LblTitle(kryptonLabel1);
+            _btn.btn(btnCarrito);
             MakeCombo();
             MakeGwPedido();
         }
@@ -77,15 +82,13 @@ namespace Vista.View
         {
             if (cbLab.SelectedIndex != 0)
             {
-                kryptonPanel1.Visible = true;
-                pictureBox1.Visible = false;
                 lblNuevoPedido.Text = "Pedido nuevo para: " + cbLab.SelectedItem;
                 getTablaPedidoXlab(cbLab.SelectedItem.ToString());
             }
             else
             {
-                kryptonPanel1.Visible = false;
-                pictureBox1.Visible = true;
+                lblNuevoPedido.Text = "Pedido nuevo para: -";
+                gwPedido.DataSource = "";
             }
         }
 
@@ -96,31 +99,47 @@ namespace Vista.View
 
         private void btnCarrito_Click(object sender, EventArgs e)
         {
-            List<Carrito> carrito = new List<Carrito>();
-
-            _stock.newPedido(cbLab.SelectedItem.ToString());
-            int maxPedido = _stock.serchMaxPedido();
-            int idItem = 0;
-
-            for (int i = 0; i < gwPedido.Rows.Count; i++)
+            if(cbLab.SelectedIndex != 0)
             {
-                DataGridViewRow fila = gwPedido.Rows[i];
-                if (Convert.ToInt32(fila.Cells[4].Value) > 0)
+                List<Carrito> carrito = new List<Carrito>();
+
+                _stock.newPedido(cbLab.SelectedItem.ToString());
+                int maxPedido = _stock.serchMaxPedido();
+                int idItem = 0;
+
+                for (int i = 0; i < gwPedido.Rows.Count; i++)
                 {
-                    idItem++;
-                    Carrito pedido = new Carrito();
-                    pedido.idPedido = maxPedido;
-                    pedido.idItemPedido = idItem;
-                    pedido.idMedicamento = (int)fila.Cells[0].Value;
-                    pedido.cantidad = (int)fila.Cells[4].Value;
-                    pedido.total = Convert.ToDecimal(fila.Cells[3].Value.ToString()) * Convert.ToInt32(fila.Cells[4].Value);
+                    DataGridViewRow fila = gwPedido.Rows[i];
+                    if (Convert.ToInt32(fila.Cells[4].Value) > 0)
+                    {
+                        idItem++;
+                        Carrito pedido = new Carrito();
+                        pedido.idPedido = maxPedido;
+                        pedido.idItemPedido = idItem;
+                        pedido.idMedicamento = (int)fila.Cells[0].Value;
+                        pedido.cantidad = (int)fila.Cells[4].Value;
+                        pedido.total = Convert.ToDecimal(fila.Cells[3].Value.ToString()) * Convert.ToInt32(fila.Cells[4].Value);
 
-                    _stock.addItem(pedido);
+                        _stock.addItem(pedido);
 
+                    }
                 }
-            }
 
-            CleanCantGwPedido();
+                CleanCantGwPedido();
+
+                var result = RJMessengerBox.Show("Pedido enviando",
+                "OK",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            }
+            else
+            {
+                var result = RJMessengerBox.Show("Seleccione un laboratorio",
+                  "Error",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Error);
+            }
+            
 
         }
         private void CleanCantGwPedido()

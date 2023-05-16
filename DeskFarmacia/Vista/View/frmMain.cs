@@ -23,6 +23,7 @@ namespace Vista
             InitializeComponent();
             _btn.btn(btnStok);
             _btn.btn(btnPedido);
+            _btn.btn(btnLaboratorios);
             _lbl.LblTitle(lblMenu);
         }
 
@@ -52,6 +53,12 @@ namespace Vista
         {
             frmPedido _pedido = new frmPedido();
             _pedido.Show(); 
+        }
+
+        private void btnLaboratorios_Click(object sender, EventArgs e)
+        {
+            frmLaboratorio lab = new frmLaboratorio();
+            lab.Show();
         }
     }
 }

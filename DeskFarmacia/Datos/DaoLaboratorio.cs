@@ -41,7 +41,34 @@ namespace Datos
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Hay un error al cargar el GridView: " + ex.Message);
+                    throw new Exception("Hay un error en la base de datos: " + ex.Message);
+                }
+            }
+        }
+
+        public void loadLab(Laboratorio lab)
+        {
+            string query = "insert into LABORATORIOS(NOMBRE_LAB,TEL_LAB,MAIL_LAB,DIRECCION_LAB) select @nombre,@tel,@mail,@direc";
+
+            using (SqlConnection connection = new SqlConnection(conexion))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@nombre", lab.nombre);
+                command.Parameters.AddWithValue("@tel", lab.telefono.ToString());
+                command.Parameters.AddWithValue("@mail", lab.mail);
+                command.Parameters.AddWithValue("@direc", lab.direccion);
+
+                try
+                {
+                    connection.Open();
+
+                    command.ExecuteNonQuery();
+
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Hay un error en la base de datos: " + ex.Message);
                 }
             }
         }
