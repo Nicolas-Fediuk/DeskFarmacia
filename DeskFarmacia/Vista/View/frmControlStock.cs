@@ -28,11 +28,8 @@ namespace Vista.View
 
         private KryptonDataGridViewTextBoxColumn colNombreProd;
         private KryptonDataGridViewTextBoxColumn colStock;
-        private KryptonDataGridViewTextBoxColumn colPrecio;
         private KryptonDataGridViewTextBoxColumn colfamProd;
-        private KryptonDataGridViewTextBoxColumn colNameLab;
-        private KryptonDataGridViewTextBoxColumn colTelLab;
-        private KryptonDataGridViewTextBoxColumn colEmailLab;
+
 
 
         #region COLCARRITO
@@ -77,33 +74,10 @@ namespace Vista.View
             colfamProd.DataPropertyName = "Familia";
             colfamProd.ReadOnly = true;
 
-            colNameLab = new KryptonDataGridViewTextBoxColumn();
-            colNameLab.HeaderText = "Laboratorio";
-            colNameLab.DataPropertyName = "Laboratorio";
-            colNameLab.ReadOnly = true;
-
-            colTelLab = new KryptonDataGridViewTextBoxColumn();
-            colTelLab.HeaderText = "Telefono";
-            colTelLab.DataPropertyName = "Telefono";
-            colTelLab.ReadOnly = true;
-
-            colEmailLab = new KryptonDataGridViewTextBoxColumn();
-            colEmailLab.HeaderText = "Mail";
-            colEmailLab.DataPropertyName = "Mail";
-            colEmailLab.ReadOnly = true;
-
-            colPrecio = new KryptonDataGridViewTextBoxColumn();
-            colPrecio.HeaderText = "Precio";
-            colPrecio.DataPropertyName = "Precio";
-            colPrecio.ReadOnly = true;
 
             gwProductos.Columns.Add(colNombreProd);
             gwProductos.Columns.Add(colStock);
-            gwProductos.Columns.Add(colNameLab);
             gwProductos.Columns.Add(colfamProd);
-            gwProductos.Columns.Add(colTelLab);
-            gwProductos.Columns.Add(colEmailLab);
-            gwProductos.Columns.Add(colPrecio);
 
             GridConfig grid = new GridConfig();
             grid.grid(gwProductos);
@@ -266,6 +240,7 @@ namespace Vista.View
                 MessageBoxIcon.Error);
             }
             
-        }
+        }     
+
     }
 }

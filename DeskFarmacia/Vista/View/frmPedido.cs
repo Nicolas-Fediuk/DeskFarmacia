@@ -29,9 +29,11 @@ namespace Vista.View
         public frmPedido()
         {
             InitializeComponent();
+
             _lbl.LblTitle(lblNuevoPedido);
             _lbl.LblTitle(kryptonLabel1);
             _btn.btn(btnCarrito);
+
             MakeCombo();
             MakeGwPedido();
         }

@@ -18,11 +18,20 @@ namespace Vista.View
 {
     public partial class frmLaboratorio : KryptonForm
     {
-        Laboratorio laboratorio = new Laboratorio();
+        Entidades.Laboratorio laboratorio = new Entidades.Laboratorio();
+
         NegoLaboratorio Negolab = new NegoLaboratorio();
+        NegoMedicamento NegoMed = new NegoMedicamento();
+        NegoPedido NegoPed = new NegoPedido();  
+        NegoLabxMed NegoLXM = new NegoLabxMed();
+
         TxtConfig _txt = new TxtConfig();
         LabelConfig _lbl = new LabelConfig();
         BtnConfig _btn = new BtnConfig();
+
+        private KryptonDataGridViewTextBoxColumn colIdMed;
+        private KryptonDataGridViewTextBoxColumn colNombreMed;
+        private KryptonDataGridViewTextBoxColumn colPrecioMed;
 
         public frmLaboratorio()
         {
@@ -41,6 +50,11 @@ namespace Vista.View
             _txt.TxtLogin(txtTelefono);
             _txt.TxtLogin(txtMail);
             _txt.TxtLogin(txtDireccion);
+
+            MakeGwLabxMed();
+            LoadGwLabxMed();
+            LoadCbLaboratorio();
+            LoadCbEditLaboratorio();
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -54,7 +68,7 @@ namespace Vista.View
                 else
                 {
                     txtNombre.StateCommon.Border.Color1 = Color.Red;
-                    mensaje("Ingrese un nombre", "Error");
+                    RJMessengerBox.Error("Ingrese un nombre");
                     return;
                 }
 
@@ -65,7 +79,7 @@ namespace Vista.View
                 else
                 {
                     txtTelefono.StateCommon.Border.Color1 = Color.Red;
-                    mensaje("Ingrese un telefono valido", "Error");
+                    RJMessengerBox.Error("Ingrese un telefono valido");
                     return;
                 }
 
@@ -76,7 +90,7 @@ namespace Vista.View
                 else
                 {
                     txtMail.StateCommon.Border.Color1 = Color.Red;
-                    mensaje("Ingrese un Mail valido", "Error");
+                    RJMessengerBox.Error("Ingrese un Mail valido");
                     return;
                 }
 
@@ -87,7 +101,7 @@ namespace Vista.View
                 else
                 {
                     txtDireccion.StateCommon.Border.Color1 = Color.Red;
-                    mensaje("Ingrese una direccion","Error");
+                    RJMessengerBox.Error("Ingrese una direccion");
                     return;
                 }
 
@@ -99,27 +113,122 @@ namespace Vista.View
                 Negolab.loadNewLab(laboratorio);
                 cleanCampos();
 
-                mensaje("Laboratorio agregado", "Agregado");
-                
+                RJMessengerBox.Ok("Laboratorio agregado");
             }
             catch(Exception ex)
             {
-                mensaje(ex.Message,"Error");    
+                RJMessengerBox.Error(ex.Message);   
             } 
         }
-        private void mensaje(string msj,string titulo)
-        {
-            RJMessengerBox.Show(msj,
-            titulo,
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Error);
-        }
+
         private void cleanCampos()
         {
             txtNombre.Clear();
             txtTelefono.Clear();
             txtMail.Clear();
             txtDireccion.Clear();
+        }
+
+        
+        private void MakeGwLabxMed()
+        {
+            gwLabxMed.AutoGenerateColumns = false;
+
+            colIdMed = new KryptonDataGridViewTextBoxColumn();
+            colIdMed.HeaderText = "ID";
+            colIdMed.DataPropertyName = "idMedicamento";
+            colIdMed.ReadOnly = true;
+
+            colNombreMed = new KryptonDataGridViewTextBoxColumn();
+            colNombreMed.HeaderText = "Nombre";
+            colNombreMed.DataPropertyName = "medicamento";
+            colNombreMed.ReadOnly = true;
+
+            colPrecioMed = new KryptonDataGridViewTextBoxColumn();
+            colPrecioMed.HeaderText = "Precio";
+            colPrecioMed.DataPropertyName = "precio";
+            colPrecioMed.ReadOnly = false;
+
+            gwLabxMed.Columns.Add(colIdMed);
+            gwLabxMed.Columns.Add(colNombreMed);
+            gwLabxMed.Columns.Add(colPrecioMed);
+
+            GridConfig gridConfig = new GridConfig();
+            gridConfig.grid(gwLabxMed);
+        }
+
+        private void LoadGwLabxMed()
+        {
+            gwLabxMed.DataSource = NegoMed.loadGwMedxLab();
+        }
+
+        private void txtBuscarMed_TextChanged(object sender, EventArgs e)
+        {
+            string search = txtBuscarMed.Text;
+
+            gwLabxMed.DataSource = NegoMed.loadGwMedxLab(search);
+        }
+
+        private void LoadCbLaboratorio()
+        {
+            cbLaboratorio.DataSource = NegoPed.LoadComboLab();
+        }
+        private void LoadCbEditLaboratorio()
+        {
+            cbLaboratorioEdit.DataSource = NegoPed.LoadComboLab();
+        }
+
+        private void btnAgregarMedXlab_Click(object sender, EventArgs e)
+        {
+            if(cbLaboratorio.SelectedIndex != 0)
+            {
+                for(int i= 0; i<gwLabxMed.Rows.Count; i++)
+                {
+                    DataGridViewRow fila = gwLabxMed.Rows[i];
+
+                    if (Convert.ToInt32(fila.Cells[2].Value) > 0)
+                    {
+                        LabxMed lm = new LabxMed();
+                        lm.codMed = (int)fila.Cells[0].Value;
+                        lm.nombreLab = cbLaboratorio.SelectedValue.ToString();
+                        lm.precio = Convert.ToDecimal(fila.Cells[2].Value);
+
+                        NegoLXM.insertDato(lm);
+                    }
+                }
+
+                CleanCantGwLabxMed();
+
+                RJMessengerBox.Ok("Medicamento y precio cargado");
+
+            }
+        }
+        private void CleanCantGwLabxMed()
+        {
+            for (int i = 0; i < gwLabxMed.Rows.Count; i++)
+            {
+                DataGridViewRow fila = gwLabxMed.Rows[i]; 
+                fila.Cells[2].Value = "0";
+            }
+        }
+
+
+        private void gwLabxMed_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (e.ColumnIndex == colPrecioMed.Index)
+            {
+                if (!int.TryParse(e.FormattedValue.ToString(), out _) && e.FormattedValue.ToString() != "")
+                {
+                    RJMessengerBox.Error("Ingrese solo numeros");
+                }
+                
+            }
+        }
+
+        private void frmLaboratorio_Load(object sender, EventArgs e)
+        {
+            kryptonPanel2.Left = (this.ClientSize.Width - kryptonPanel2.Width) / 2;
+            kryptonPanel4.Left = (this.ClientSize.Width - kryptonPanel4.Width) / 2;   
         }
     }
 }

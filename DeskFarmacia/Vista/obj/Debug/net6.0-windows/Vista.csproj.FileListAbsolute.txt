@@ -49,3 +49,4 @@ C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\Vista\obj\Debug\net
 C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\Vista\obj\Debug\net6.0-windows\Vista.View.frmDescripPedido.resources
 C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\Vista\obj\Debug\net6.0-windows\Vista.View.frmPedido.resources
 C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\Vista\obj\Debug\net6.0-windows\Vista.View.frmLaboratorio.resources
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\Vista\obj\Debug\net6.0-windows\Vista.View.Laboratorio.frmBajaLaboratorio.resources

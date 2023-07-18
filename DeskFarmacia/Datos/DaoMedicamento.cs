@@ -1,5 +1,6 @@
 ﻿using Entidades;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -65,6 +66,43 @@ namespace Datos
                     throw new Exception("Hay un error al cargar el GridView: " + ex.Message);
                 }
             }
+        }
+
+        public List<Medicamento> getLoadGwLabxMed() {
+            
+            List<Medicamento> ListMedicamento= new List<Medicamento>();
+
+            string query = "select CODIGO_MED,NOMBRE_MED from MEDICAMENTOS";
+
+            using (SqlConnection connection = new SqlConnection(conexion))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Medicamento med = new Medicamento();
+                        med.idMedicamento= reader.GetInt32(0); 
+                        med.medicamento= reader.GetString(1);
+
+                        ListMedicamento.Add(med);   
+                    }
+                    
+                    reader.Close();
+                    connection.Close();
+
+                    return ListMedicamento;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Hay un error la base de datos: " + ex.Message);
+                }
+            }
+
         }
     }
 }

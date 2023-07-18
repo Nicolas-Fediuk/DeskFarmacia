@@ -1,0 +1,12 @@
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.CMN\obj\Debug\net6.0\DeskFarmacia.CMN.csproj.AssemblyReference.cache
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.CMN\obj\Debug\net6.0\DeskFarmacia.CMN.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.CMN\obj\Debug\net6.0\DeskFarmacia.CMN.AssemblyInfoInputs.cache
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.CMN\obj\Debug\net6.0\DeskFarmacia.CMN.AssemblyInfo.cs
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.CMN\obj\Debug\net6.0\DeskFarmacia.CMN.csproj.CoreCompileInputs.cache
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.CMN\bin\Debug\net6.0\DeskFarmacia.CMN.deps.json
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.CMN\bin\Debug\net6.0\DeskFarmacia.CMN.dll
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.CMN\bin\Debug\net6.0\DeskFarmacia.CMN.pdb
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.CMN\obj\Debug\net6.0\DeskFarmacia.CMN.dll
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.CMN\obj\Debug\net6.0\refint\DeskFarmacia.CMN.dll
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.CMN\obj\Debug\net6.0\DeskFarmacia.CMN.pdb
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.CMN\obj\Debug\net6.0\ref\DeskFarmacia.CMN.dll

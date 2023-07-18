@@ -16,7 +16,7 @@ namespace Datos
         {
             List<Stock> stock = new List<Stock>();
 
-            string query = "select NOMBRE_MED,STOCK_MED,DESCRIP_FAM,NOMBRE_LAB,TEL_LAB,MAIL_LAB,PRECIO_LABXMED from MEDICAMENTOS JOIN MEDXFAMILIA ON CODMED_MEDXFAM = CODIGO_MED JOIN FAMILIAS ON CODFAM_MEDXFAM = CODIGO_FAM join LABXMED on CODIGO_MED = CODMED_LABXMED JOIN LABORATORIOS ON NOMBRE_LAB = NOMLAB_LABXMED";
+            string query = "select NOMBRE_MED,sum(STOCK_MED) as STOCK_MED,DESCRIP_FAM from MEDICAMENTOS JOIN MEDXFAMILIA  ON CODMED_MEDXFAM = CODIGO_MED JOIN FAMILIAS ON CODFAM_MEDXFAM = CODIGO_FAM group by NOMBRE_MED,STOCK_MED,DESCRIP_FAM";
 
             using (SqlConnection connection = new SqlConnection(conexion))
             {
@@ -34,10 +34,6 @@ namespace Datos
                         _stock.producto = reader.GetString(0);
                         _stock.stock = reader.GetInt32(1);
                         _stock.familia = reader.GetString(2);
-                        _stock.laboratorio = reader.GetString(3);
-                        _stock.telefono = reader.GetInt64(4);
-                        _stock.mail = reader.GetString(5);
-                        _stock.precio = reader.GetDecimal(6);
 
                         stock.Add(_stock);
                     }
@@ -53,7 +49,7 @@ namespace Datos
             return stock;
         }
 
-        public List<TablaPedido> getTablaPedido(string nombre)
+        /*public List<TablaPedido> getTablaPedido(string nombre)
         {
             List<TablaPedido> listaPedido = new List<TablaPedido>();
 
@@ -89,7 +85,48 @@ namespace Datos
                     throw new Exception("Hay un error al cargar el GridView: " + ex.Message);
                 }
             }
+        }*/
+
+        public List<TablaPedido> getTablaPedido(string nombre)
+        {
+            string query = "SELECT CODIGO_MED, NOMBRE_MED, DESCRIP_FAM, PRECIO_LABXMED FROM MEDICAMENTOS JOIN MEDXFAMILIA ON CODIGO_MED = CODMED_MEDXFAM JOIN FAMILIAS ON CODFAM_MEDXFAM = CODIGO_FAM JOIN LABXMED ON CODIGO_MED = CODMED_LABXMED JOIN LABORATORIOS ON NOMLAB_LABXMED = NOMBRE_LAB WHERE NOMBRE_LAB = @nombre";
+
+            using (SqlConnection connection = new SqlConnection(conexion))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@nombre", nombre);
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                List<TablaPedido> listaPedido = LeerDatos(reader, r =>
+                {
+                    TablaPedido pedido = new TablaPedido();
+                    pedido.idMedicamento = r.GetInt32(0);
+                    pedido.medicamento = r.GetString(1);
+                    pedido.familia = r.GetString(2);
+                    pedido.precio = r.GetDecimal(3);
+                    return pedido;
+                });
+
+                return listaPedido;
+            }
         }
+
+        private List<T> LeerDatos<T>(SqlDataReader reader, Func<SqlDataReader, T> mapFunc)
+        {
+            List<T> lista = new List<T>();
+
+            while (reader.Read())
+            {
+                T objeto = mapFunc(reader);
+                lista.Add(objeto);
+            }
+
+            return lista;
+        }
+
+
 
         public void cargarPedido(string lab)
         {

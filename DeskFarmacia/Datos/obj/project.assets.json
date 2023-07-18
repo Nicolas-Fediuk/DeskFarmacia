@@ -276,16 +276,6 @@
             "rid": "win"
           }
         }
-      },
-      "Entidades/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/Entidades.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Entidades.dll": {}
-        }
       }
     }
   },
@@ -784,16 +774,10 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
-    },
-    "Entidades/1.0.0": {
-      "type": "project",
-      "path": "../Entidades/Entidades.csproj",
-      "msbuildProject": "../Entidades/Entidades.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Entidades >= 1.0.0",
       "System.Configuration.ConfigurationManager >= 7.0.0",
       "System.Data.SqlClient >= 4.8.5"
     ]
@@ -829,11 +813,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "C:\\Users\\nfediuk\\Desktop\\PROYECTO_DESK_FARMACIA\\DeskFarmacia\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\nfediuk\\Desktop\\PROYECTO_DESK_FARMACIA\\DeskFarmacia\\Entidades\\Entidades.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

@@ -17,5 +17,22 @@ namespace Vista.MessengerBox
             return result;
         }
 
+        public static DialogResult Error(string msj)
+        {
+
+            DialogResult result;
+            using (var msgForm = new FormMessagerBox(msj, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error))
+                result = msgForm.ShowDialog();
+            return result;
+        }
+
+        public static DialogResult Ok(string msj)
+        {
+
+            DialogResult result;
+            using (var msgForm = new FormMessagerBox(msj, "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information))
+                result = msgForm.ShowDialog();
+            return result;
+        }
     }
 }

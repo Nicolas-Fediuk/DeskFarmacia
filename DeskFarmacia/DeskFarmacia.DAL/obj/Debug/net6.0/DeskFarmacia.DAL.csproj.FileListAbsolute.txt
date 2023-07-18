@@ -1,0 +1,17 @@
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.DAL\obj\Debug\net6.0\DeskFarmacia.DAL.csproj.AssemblyReference.cache
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.DAL\obj\Debug\net6.0\DeskFarmacia.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.DAL\obj\Debug\net6.0\DeskFarmacia.DAL.AssemblyInfoInputs.cache
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.DAL\obj\Debug\net6.0\DeskFarmacia.DAL.AssemblyInfo.cs
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.DAL\obj\Debug\net6.0\DeskFarmacia.DAL.csproj.CoreCompileInputs.cache
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.DAL\bin\Debug\net6.0\DeskFarmacia.DAL.deps.json
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.DAL\bin\Debug\net6.0\DeskFarmacia.DAL.dll
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.DAL\bin\Debug\net6.0\DeskFarmacia.DAL.pdb
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.DAL\bin\Debug\net6.0\DeskFarmacia.CMN.dll
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.DAL\bin\Debug\net6.0\DeskFarmacia.DMN.dll
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.DAL\bin\Debug\net6.0\DeskFarmacia.CMN.pdb
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.DAL\bin\Debug\net6.0\DeskFarmacia.DMN.pdb
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.DAL\obj\Debug\net6.0\DeskFarmacia.DAL.csproj.CopyComplete
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.DAL\obj\Debug\net6.0\DeskFarmacia.DAL.dll
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.DAL\obj\Debug\net6.0\refint\DeskFarmacia.DAL.dll
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.DAL\obj\Debug\net6.0\DeskFarmacia.DAL.pdb
+C:\Users\nfediuk\Desktop\PROYECTO_DESK_FARMACIA\DeskFarmacia\DeskFarmacia.DAL\obj\Debug\net6.0\ref\DeskFarmacia.DAL.dll

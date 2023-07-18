@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "DeskFarmacia.DMN/1.0.0": {
+        "runtime": {
+          "DeskFarmacia.DMN.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DeskFarmacia.DMN/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

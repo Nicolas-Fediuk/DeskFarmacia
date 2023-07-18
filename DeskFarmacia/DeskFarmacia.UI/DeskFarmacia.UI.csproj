@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Krypton.Navigator" Version="70.22.11.312" />
+    <PackageReference Include="Krypton.Ribbon" Version="70.22.11.312" />
+    <PackageReference Include="Krypton.Toolkit" Version="70.22.11.312" />
+    <PackageReference Include="Krypton.Workspace" Version="70.22.11.312" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DeskFarmacia.BLL\DeskFarmacia.BLL.csproj" />
+    <ProjectReference Include="..\DeskFarmacia.DMN\DeskFarmacia.DMN.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MessengerBox\FormMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="View\frmControlStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\frmDescripPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\Laboratorio\frmLaboratorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
